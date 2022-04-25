@@ -10,7 +10,7 @@ int number3 = number / 100 % 10;
 int number4 = number / 10 % 10;
 int number5 = number % 10;
 
-if(number1 == number5 && number2 == number4)
+if (number1 == number5 && number2 == number4)
 {
     Console.WriteLine($"Число {number} является полиндромом");
 }
