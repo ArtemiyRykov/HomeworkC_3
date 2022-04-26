@@ -3,19 +3,33 @@
 // A (7,-5, 0); B (1,-1,9) -> 11.53
 
 
-Console.Write("Введите координату x1 = ");
-int x1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите координату y1 = ");
-int y1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите координату z1 = ");
-int z1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите координату x2 = ");
-int x2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите координату y2 = ");
-int y2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите координату z2 = ");
-int z2 = Convert.ToInt32(Console.ReadLine());
+int xA = Cordinate("x", "A");
+int yA = Cordinate("y", "A");
+int zA = Cordinate("z", "A");
+int xB = Cordinate("x", "B");
+int yB = Cordinate("y", "B");
+int zB = Cordinate("z", "B");
 
-double distance = Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2)), 2);
+double squareX = SquareNumber(xA,xB);
+double squareY = SquareNumber(yA,yB);
+double squareZ = SquareNumber(zA,zB);
 
+double distance = Math.Sqrt(squareX + squareY + squareZ);
 Console.WriteLine($"Расстояние между точками равно = {distance}");
+
+
+
+
+int Cordinate(string coorName, string pointName)
+{
+    Console.WriteLine($"Введите координаты {coorName} точки {pointName}: ");
+    return Convert.ToInt16(Console.ReadLine());
+}
+
+double SquareNumber(double number1, double number2)
+{
+    return Math.Pow((number1 - number2), 2);
+}
+
+
+
